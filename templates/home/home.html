@@ -1,0 +1,19 @@
+{% include "partials/base.html" %} {% block content %}
+<div class="banner">
+  <div class="box">
+    {% if request.user.is_authenticated %}
+    <h1>welcome : {{request.user.username}}</h1>
+    <div class="btn">
+      <a href="{% url 'home:sign-out' %}">logout</a>
+    </div>
+  </div>
+  {% else %}
+  <h1>welcome</h1>
+  <div class="btn">
+    <a href="{% url 'home:sign-up' %}">Register</a>
+  </div>
+  <div class="btn">
+    <a href="{% url 'home:sign-in' %}">SignIn</a>
+  </div>
+</div>
+{% endif %} {% endblock content %}

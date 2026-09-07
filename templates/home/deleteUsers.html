@@ -1,0 +1,23 @@
+
+
+{% include "partials/base.html" %} {% block content %}
+  <div class="container">
+    <div class="title"><h3>Delete:</h3></div>
+     <form  action="{% url 'home:query_results' %}" method="get">
+
+
+      <div class="form-container">
+        <div class="input-box">
+          <span class="details">        Delete users by object id
+
+        </div>
+
+
+        <div class="btn">
+                  <button class="button">
+          <a class="button" href="{% url 'home:deleteUSers' %}">Confirm</a></button>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

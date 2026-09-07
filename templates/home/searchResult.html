@@ -1,0 +1,15 @@
+{% include "partials/base.html" %} {% block content %}
+
+<div class="container">
+  <div class="title">Search By UserName</div>
+  <form method="get">
+    <div class="form-container">
+      <div class="btn">
+         {% for user in searchByUserName_filter.qs %}
+ {{ user.username }} {% empty %} {% endfor %}
+        <button class="btn button" type="submit">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+{%endblock content %}

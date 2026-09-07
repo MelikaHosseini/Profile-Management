@@ -1,0 +1,35 @@
+{% include "partials/base.html" %} {% block content %}
+  <div class="container">
+    <div class="title">SignUp</div>
+    <form method="POST">
+      {% csrf_token %} {% if form.errors %}
+      <div class="alert alert-error">
+        <ul>
+          {% for error in form.non_field_errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <div class="form-container">
+        {% for field in form.visible_fields %}
+        <div class="input-box">
+          {{ field.html_name }} {% if field.errors %}error{% endif %}
+          <span class="details"
+            >{{ field.label }}{% if field.field.required %} *{% endif %}</span
+          >
+          {{ field }} {% if field.errors %}<span class="help-inline"
+            >{{ field.errors.as_text }}</span
+          >{% endif %}
+        </div>
+        {% endfor %}
+
+        <div class="btn">
+          <button class="button" type="submit">submit btn</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+{% endblock content %}

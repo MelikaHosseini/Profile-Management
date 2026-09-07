@@ -1,0 +1,37 @@
+{% include "partials/base.html" %}
+
+
+{% block content %}
+{% load static %}
+
+{% for m in messages %} {{m}} {% endfor %} 
+
+    <div class="container">
+      <div class="title">SignIn</div>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-container">
+
+
+
+{% for m in messages %} {{m}} {% endfor %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="input-box">
+  <label>Email Address</label>
+  <input type="email" name="email" id="" />
+   </div>
+   <div class="input-box">
+  <label>password</label>
+  <input  type="password" name="password" id="" />
+    </div>
+    <div class="btn">
+  <button  class="btn button" type="submit">Login</button>
+          </div>
+        </div>
+</form>
+    </div>
+  </body>
+</html>
+{% endblock content %}

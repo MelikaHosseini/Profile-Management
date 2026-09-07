@@ -1,0 +1,15 @@
+<header>
+  <a href="#" class="logo"> <span>Profile</span>Management</a>
+  <div id="menu" class="fas fa-bars"></div>
+  <nav class="navbar">
+    <ul>
+      <li><a class="{% url 'home:index' %}" href="#home">Home</a></li>
+      <li><a href="{% url 'home:sign-up' %}">signUp</a></li>
+      <li>
+        <a href="{% url 'home:deleteUserstemplate' %}">delete Users</a>
+      </li>
+      <li><a href="{% url 'home:viewUsersList' %}">Users List</a></li>
+      <li><a href="{% url 'home:search' %}">Search</a></li> 
+    </ul>
+  </nav>
+</header>
